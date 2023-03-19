@@ -1,0 +1,46 @@
+from tkinter import*
+def win():
+    print("CONTACT SAVED!!")
+root = Tk()
+root.title("CONTACTS")
+root.geometry("500x400")
+heading=Label(root,text="NAME",pady=15,font="cosmicsms 19 bold")
+firstname = Label(root,text="FIRSTNAME")
+lastname = Label(root,text="LASTNAME")
+number = Label(root,text="PHONE NUMBER")
+mailid = Label(root,text="MAILID")
+gender = Label(root,text="GENDER")
+
+heading.grid(row=0,column=3)
+firstname.grid(row=1,column=2)
+lastname.grid(row=2,column=2)
+number.grid(row=3,column=2)
+mailid.grid(row=4,column=2)
+gender.grid(row=5,column=2)
+
+firstnamevalue = StringVar()
+lastnamevalue = StringVar()
+numbervalue = StringVar()
+mailidvalue = StringVar()
+gendervalue = StringVar()
+favoritecontact = IntVar()
+
+firstnameentry= Entry(root,textvariable=firstnamevalue)
+lastnameentry= Entry(root,textvariable=lastnamevalue)
+numberentry= Entry(root,textvariable=numbervalue)
+mailidentry= Entry(root,textvariable=mailid)
+genderentry= Entry(root,textvariable=gendervalue)
+
+firstnameentry.grid(row=1,column=3)
+lastnameentry.grid(row=2,column=3)
+numberentry.grid(row=3,column=3)
+mailidentry.grid(row=4,column=3)
+genderentry.grid(row=5,column=3)
+
+favoritecontactcheckbox= Checkbutton(text="add to favorites?",variable=favoritecontact)
+favoritecontactcheckbox.grid(row=6,column=3)
+
+a = Button(text="SAVE CONTACT",command=win)
+a.grid(row=8,column=3)
+
+root.mainloop()
